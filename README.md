@@ -12,3 +12,9 @@
 ### Simulation slow subscriber
 ![](rabbit.png)
 The total number of messages in queue is 21. It is because the publisher sends messages at a faster rate than the subscriber can consume them, causing the messages to accumulate in the queue.
+
+### Reflection and Running at least three subscribers
+![](rabbit2.png)
+The queue spiked to 13 messages for a moment before emptying out almost immediately. Because the publisher pushed several messages at once and I had three subscribers processing them concurrently, the backlog cleared much faster than with just one subscriber. This illustrates how adding more consumers can increase throughput and prevent queue build-up when the publisher is operating quickly.
+
+
